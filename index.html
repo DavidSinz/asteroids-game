@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="DE">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Space Invaders</title>
+	<link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
+	<link rel="stylesheet" href="vendors/w3.css">
+	<link rel="stylesheet" href="resources/css/styles.css">
+</head>
+<body>
+	<div id="mainmenu">
+		<div id="card" class="w3-card-4 w3-display-middle">
+		  <div class="w3-display-container w3-text-white">
+		    <img src="resources/css/img/mainmenu-img.jpg" alt="Lights" style="width:100%">
+		    <div class="w3-xxxlarge w3-display-middle w3-padding"><h1 class="title">Asteroids</h1></div>
+		  </div>
+		  <div class="w3-row">
+		  	<div id="new-game" class="w3-third w3-center w3-margin-top w3-margin-bottom">
+		  		<button class="w3-btn w3-xxlarge w3-white w3-border w3-border-blue">New Game</button>
+		  	</div>
+		  	<div id="game-state" class="w3-third w3-center w3-margin-top w3-margin-bottom">
+		  		<p class="w3-xlarge w3-text-black">Pause Game</p>
+		  		<p class="player-points w3-large">0 Points</p>
+		  	</div>
+		  	<div id="continue" class="w3-third w3-center w3-margin-top w3-margin-bottom">
+		  		<button id="ctn-btn" class="w3-btn w3-xxlarge w3-white w3-border w3-border-blue" disabled>Continue</button>
+		  	</div>
+		  </div>
+		</div>
+	</div>
+	<div id="gamescreen">
+		<div id="control-panel" class="w3-row">
+			<div class="w3-third w3-center w3-margin-top w3-margin-bottom">
+				<button id="pause-game" class="w3-btn w3-medium w3-white w3-border w3-border-blue">Pause</button>
+			</div>
+			<div class="w3-third w3-center w3-margin-top w3-margin-bottom">
+				<div class="w3-light-grey w3-round-xlarge">
+			    <div id="health-bar" class="w3-blue w3-round-xlarge"></div>
+			  </div>
+			</div>
+			<div class="w3-third w3-center w3-margin-top w3-margin-bottom">
+				<p class="player-points">0 Points</p>
+				<p class="player-level">Level 1</p>
+			</div>
+		</div>
+		<canvas id="canvas" width="1000" height="600" ></canvas>
+	</div>
+	
+	<script src="resources/js/entities/Entity.js"></script>
+	<script src="resources/js/entities/Explosion.js"></script>
+	<script src="resources/js/entities/Enemy.js"></script>
+	<script src="resources/js/entities/Player.js"></script>
+	<script src="resources/js/manager/BulletManager.js"></script>
+	<script src="resources/js/manager/EnemyManager.js"></script>
+	<script src="resources/js/manager/ScoreLevelManager.js"></script>
+	<script src="resources/js/GameModel.js"></script>
+	<script src="resources/js/GameView.js"></script>
+	<script src="resources/js/GameController.js"></script>
+	<script>
+		const canvasWidth = 1000, canvasHeight = 600;
+		gameModel.init(canvasWidth, canvasHeight);
+		gameView.init();
+		gameController.init();
+	</script>
+</body>
+</html>
